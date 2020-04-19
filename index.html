@@ -78,7 +78,7 @@
       .wrapper .profile .check{
         position: absolute;
         right: 5em;
-        bottom: 15.7em;
+        bottom: 16.2em;
       }
 
       .wrapper .profile .check i{
@@ -239,11 +239,12 @@
                   <input type="number" id="plus1" name="plus1" class="form-control col-lg-4" style="margin-right: 100px; text-align: center;">
                   <input type="number" id="plus2" name="plus2" class="form-control col-lg-4" style="text-align: center;">
                 </p>
-                <p clss="result">
-                  <input type="number" id="sum" name="sum" class="form-control col-lg-4" style="text-align: center;" readonly>
-                  <input type="text" class="form-control" style="text-align: center;" readonly>
+                <button type="button" onclick="penjumlahan()" class="btn">Check</button> <br>
+                <p class="result">
+                  <input type="number" id="sum" name="sum" class="form-control col-lg-4" placeholder="Hasil" style="text-align: center;" readonly>
+                  <!-- <input type="text" id="text_sum" class="form-control" style="text-align: center;" readonly> -->
                 </p>
-                <button type="button" onclick="penjumlahan()" class="btn">Check</button>
+                <p id="teks_sum"></p>
               </div>
 
               <!-- <div class="social-icons">
@@ -285,14 +286,15 @@
                 <h3 class="name">Kurang</h3>
                 <!-- <p class="title">Hello</p> -->
                 <p class="description">
-                  <input type="number" id="min1" name="min1" class="form-control col-lg-3" style="margin-right: 100px; text-align: center;">
-                  <input type="number" id="min2" name="min2" class="form-control col-lg-3" style="text-align: center;">
+                  <input type="number" id="min1" name="min1" class="form-control col-lg-4" style="margin-right: 100px; text-align: center;">
+                  <input type="number" id="min2" name="min2" class="form-control col-lg-4" style="text-align: center;">
                 </p>
-                <p clss="result">
-                  <input type="number" id="min" name="min" class="form-control col-lg-3" style="text-align: center;" readonly>
-                  <input type="text" class="form-control" style="text-align: center;" readonly>
+                <button type="button" onclick="pengurangan()" class="btn">Check</button> <br>
+                <p class="result">
+                  <input type="number" id="min" name="min" class="form-control col-lg-4" placeholder="Hasil" style="text-align: center;" readonly>
+                  <!-- <input type="text" class="form-control" style="text-align: center;" readonly> -->
                 </p>
-                <button type="button" onclick="pengurangan()" class="btn">Check</button>
+                <p id="teks_min"></p>
               </div>
 
               <!-- <div class="social-icons">
@@ -334,15 +336,15 @@
                 <h3 class="name">Bagi</h3>
                 <!-- <p class="title">Hello</p> -->
                 <p class="description">
-                  <input type="number" id="div1" name="div1" class="form-control col-lg-3" style="margin-right: 100px; text-align: center;">
-                  <input type="number" id="div2" name="div2" class="form-control col-lg-3" style="text-align: center;">
+                  <input type="number" id="div1" name="div1" class="form-control col-lg-4" style="margin-right: 100px; text-align: center;">
+                  <input type="number" id="div2" name="div2" class="form-control col-lg-4" style="text-align: center;">
                 </p>
-                <p clss="result">
-                  <input type="number" id="divide" name="divide" class="form-control col-lg-3" style="text-align: center;" readonly>
-                  <input type="text" class="form-control" style="text-align: center;" readonly>
+                <button type="button" onclick="pembagian()" class="btn">Check</button> <br>
+                <p class="result">
+                  <input type="number" id="divide" name="divide" class="form-control col-lg-4" placeholder="Hasil" style="text-align: center;" readonly>
+                  <!-- <input type="text" class="form-control" style="text-align: center;" readonly> -->
                 </p>
-                
-                <button type="button" onclick="pembagian()" class="btn">Check</button>
+                <p id="teks_div"></p>
               </div>
 
               <!-- <div class="social-icons">
@@ -384,14 +386,16 @@
                 <h3 class="name">Kali</h3>
                 <!-- <p class="title">Hello</p> -->
                 <p class="description">
-                  <input type="number" id="mul1" name="mul1" value="10" class="form-control col-lg-3" style="margin-right: 100px; text-align: center;">
-                  <input type="number" id="mul2" name="mul2" class="form-control col-lg-3" style="text-align: center;">
+                  <input type="number" id="mul1" name="mul1" class="form-control col-lg-4" style="margin-right: 100px; text-align: center;">
+                  <input type="number" id="mul2" name="mul2" class="form-control col-lg-4" style="text-align: center;">
                 </p>
-                <p clss="result">
-                  <input type="number" id="multiple" name="multiple" class="form-control col-lg-3" style="text-align: center;" readonly>
-                  <input type="text" class="form-control" style="text-align: center;" readonly>
+                <button type="button" class="btn" onclick="perkalian()">Check</button> <br>
+                <p class="result">
+                  <input type="number" id="multiple" name="multiple" class="form-control col-lg-4" placeholder="Hasil" style="text-align: center;" readonly>
+                  <!-- <input type="text" class="form-control" style="text-align: center;" readonly> -->
                 </p>
-                <button type="button" class="btn" onclick="perkalian()">Check</button>
+                <p id="teks_multiple"></p>
+                
               </div>
 
               <!-- <div class="social-icons">
@@ -469,12 +473,25 @@
     var mul  = parseInt(mul1) * parseInt (mul2);
     document.getElementById("multiple").value=mul;
       
-      // if(sum > 100) {
-      //   alert('Sum '+sum+ ' is greater than 100')
-      // } else {
-      //   alert('Sum '+sum+ ' is less than 100') 
-      // }
+    var modulus = mul%2;
+      
+    if (mul == "0") {
+      document.getElementById('multiple').style.color = "white";
+      document.getElementById('multiple').style.background="blue";
     }
+    else if  (modulus == "0") {
+      document.getElementById('multiple').style.color = "white";
+      document.getElementById('multiple').style.background="green";
+    } 
+    else if (modulus == "1") {
+        document.getElementById('multiple').style.color = "black";
+        document.getElementById('multiple').style.background="yellow";
+      }
+      
+    document.getElementById("teks_multiple").innerHTML = " Konversi ke Teks : " +  get_teks_angka(document.getElementById("multiple").value, 0);
+
+    }
+    document.getElementById('multiple').onchange = perkalian;
 
     function penjumlahan() {
       var plus1 = $("#plus1").val();
@@ -485,7 +502,11 @@
       
       var modulus = sum%2;
       
-      if  (modulus == "0") {
+      if (sum == "0") {
+        document.getElementById('sum').style.color = "white";
+        document.getElementById('sum').style.background="blue";
+      }
+      else if  (modulus == "0") {
         document.getElementById('sum').style.color = "white";
         document.getElementById('sum').style.background="green";
       } 
@@ -493,10 +514,8 @@
         document.getElementById('sum').style.color = "black";
         document.getElementById('sum').style.background="yellow";
       }
-      // else (document.getElementById('sum').value = '0') {
-      //   document.getElementById('sum').style.color = "white";
-      //   document.getElementById('sum').style.background="blue";
-      // }
+      
+      document.getElementById("teks_sum").innerHTML = " Konversi ke Teks : " +  get_teks_angka(document.getElementById("sum").value, 0);
     }
     document.getElementById('sum').onchange= penjumlahan;
     
@@ -508,12 +527,25 @@
     var minus  = parseInt(min1) - parseInt (min2);
     document.getElementById("min").value=minus;
       
-      // if(sum > 100) {
-      //   alert('Sum '+sum+ ' is greater than 100')
-      // } else {
-      //   alert('Sum '+sum+ ' is less than 100') 
-      // }
+    var modulus = minus%2;
+      
+      if (minus == "0") {
+        document.getElementById('min').style.color = "white";
+        document.getElementById('min').style.background="blue";
+      }
+      else if  (modulus == "0") {
+        document.getElementById('min').style.color = "white";
+        document.getElementById('min').style.background="green";
+      } 
+      else if (modulus == "1") {
+        document.getElementById('min').style.color = "black";
+        document.getElementById('min').style.background="yellow";
+      }
+    
+    document.getElementById("teks_min").innerHTML = " Konversi ke Teks : " +  get_teks_angka(document.getElementById("min").value, 0);
+      
     }
+    document.getElementById('min').onchange = pengurangan;
 
     function pembagian() {
     var div1 = $("#div1").val();
@@ -522,12 +554,122 @@
     var divide = parseInt(div1) / parseInt (div2);
     document.getElementById("divide").value=divide;
       
-      // if(sum > 100) {
-      //   alert('Sum '+sum+ ' is greater than 100')
-      // } else {
-      //   alert('Sum '+sum+ ' is less than 100') 
-      // }
+    var modulus = divide%2;
+      
+      if (divide == "0") {
+        document.getElementById('divide').style.color = "white";
+        document.getElementById('divide').style.background="blue";
+      }
+      else if  (modulus == "0") {
+        document.getElementById('divide').style.color = "white";
+        document.getElementById('divide').style.background="green";
+      } 
+      else if (modulus == "1") {
+        document.getElementById('divide').style.color = "black";
+        document.getElementById('divide').style.background="yellow";
+      }
+    
+    document.getElementById("teks_div").innerHTML = " Konversi ke Teks : " +  get_teks_angka(document.getElementById("divide").value, 0);
+      
     }
+    document.getElementById('divide').onchange = pembagian;
+
+    function konversi_ke_teks(num, ignore_ten_plus_check) {
+
+      var ones = [];
+      var tens = [];
+      var ten_plus = [];
+      ones["1"] = "satu";
+      ones["2"] = "dua";
+      ones["3"] = "tiga";
+      ones["4"] = "empat";
+      ones["5"] = "lima";
+      ones["6"] = "enam";
+      ones["7"] = "tujuh";
+      ones["8"] = "delapan";
+      ones["9"] = "sembilan";
+
+      ten_plus["10"] = "sepuluh";
+      ten_plus["11"] = "sebelas";
+      ten_plus["12"] = "duabelas";
+      ten_plus["13"] = "tigabelas";
+      ten_plus["14"] = "empatbelas";
+      ten_plus["15"] = "limabelas";
+      ten_plus["16"] = "enambelas";
+      ten_plus["17"] = "tujuhbelas";
+      ten_plus["18"] = "delapanbelas";
+      ten_plus["19"] = "sembilanbelas";
+
+      tens["1"] = "sepuluh";
+      tens["2"] = "duapuluh";
+      tens["3"] = "tigapuluh";
+      tens["4"] = "empatpuluh";
+      tens["5"] = "limapuluh";
+      tens["6"] = "enampuluh";
+      tens["7"] = "tujuhpuluh";
+      tens["8"] = "delapanpuluh";
+      tens["9"] = "sembilanpuluh";	
+
+      var len = num.length;
+        
+      if(ignore_ten_plus_check != true && len >= 2) {
+        var ten_pos = num.slice(len - 2, len - 1);
+        if(ten_pos == "1") {
+          return ten_plus[num.slice(len - 2, len)];
+        } else if(ten_pos != 0) {
+          var one_ = ones[num.slice(len - 1, len)];
+          var ten_ = tens[num.slice(len - 2, len - 1)]
+            return  (ten_ != undefined ? ten_ : "") + " " + (one_ != undefined ? one_ : "");
+        }
+      }
+
+        return ones[num.slice(len - 1, len)];
+        
+      }
+
+    function get_teks_angka(str, recursive_call_count) {
+    if(recursive_call_count > 1) {
+        return "conversion is not feasible";
+      }
+    var len = str.length;
+    var ten_plus = konversi_ke_teks(str, false);
+          var words = ten_plus != undefined ?  ten_plus : "";
+          if ((len == 2 || len == 1)  && ten_plus != undefined) {
+              if (recursive_call_count == 0) {
+                  words = words;
+              }
+              return words;
+          }
+          if (recursive_call_count == 0) {
+            if(ten_plus != undefined) {
+                words = " and " + words;
+              } else {
+                words = words;
+              }
+          }
+      
+      var hundred = konversi_ke_teks(str.slice(0, len-2), true);
+    words = hundred != undefined ? hundred + " hundred " + words : words;
+      if(len == 3) {
+        return words;
+      }
+      
+      var thousand = konversi_ke_teks(str.slice(0, len-3), false);
+    words = thousand != undefined ? thousand  + " thousand " + words : words;
+      if(len <= 5) {
+        return words;
+      }
+      
+      var lakh = konversi_ke_teks(str.slice(0, len-5), false);
+      words =  lakh != undefined ? lakh + " lakh " + words : words;
+      if(len <= 7) {
+        return words;
+      }
+      
+      recursive_call_count = recursive_call_count + 1;
+      return get_teks_angka(str.slice(0, len-7), recursive_call_count) + " crore " + words;
+    }
+
   </script>
 
 </html>
