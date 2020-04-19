@@ -9,6 +9,18 @@
 
     <style>
 
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+
       .row {
         display: -ms-flexbox;
         display: flex;
@@ -27,7 +39,7 @@
 
       body{
         width: 100%;
-        background-image: url(uk.jpg);
+        background-image: url(japan.jpg);
         background-size: cover;
         position: relative;
         align-items: center;
@@ -54,7 +66,7 @@
         position: relative;
       }
 
-      .wrapper .profile:aftter{
+      .wrapper .profile:after{
         width: 100%;
         height: 1px;
         content: '';
@@ -113,6 +125,13 @@
       }
 
       .wrapper .profile .description{
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+        align-items: center;
+        margin-right: 30px;
+        margin-left: 25px;
+        justify-content: center;
         color: white;
         font-size: 14px;
         font-weight: 300;
@@ -208,107 +227,21 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
-            <div class="wrapper bg-1">
-              <div class="profile">
-                <img src="" class="thumbnail" alt="">
-                <div class="check">
-                  <i class="fa fa-check"></i>
-                </div>
-                <h3 class="name">Tambah</h3>
-                <p class="title">Hello</p>
-                <p class="description">
-                  Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting.
-                </p>
-                <button type="button" class="btn">Check</button>
-              </div>
-
-              <div class="social-icons">
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-instagram"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="wrapper bg-2">
-              <div class="profile">
-                <img src="" class="thumbnail" alt="">
-                <div class="check">
-                  <i class="fa fa-check"></i>
-                </div>
-                <h3 class="name">Kurang</h3>
-                <p class="title">Hello</p>
-                <p class="description">
-                  Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting.
-                </p>
-                <button type="button" class="btn">Check</button>
-              </div>
-
-              <div class="social-icons">
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-instagram"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4">
             <div class="wrapper bg-3">
               <div class="profile">
                 <img src="" class="thumbnail" alt="">
                 <div class="check">
-                  <i class="fas fa-divide"></i>
+                  <i class="fa fa-plus"></i>
                 </div>
-                <h3 class="name">Bagi</h3>
+                <h3 class="name">Tambah</h3>
                 <!-- <p class="title">Hello</p> -->
                 <p class="description">
-                  <input type="text" class="form-control">
-                  <input type="text" class="form-control">
-                  <input type="text" class="form-control">
-                  <input type="text" class="form-control">
+                  <input type="number" id="plus1" name="plus1" class="form-control col-lg-4" style="margin-right: 100px;">
+                  <input type="number" id="plus2" name="plus2" class="form-control col-lg-4">
+                </p>
+                <p clss="result">
+                  <input type="number" id="sum" name="sum" class="form-control col-lg-4" readonly>
+                  <input type="text" class="form-control" readonly>
                 </p>
                 <button type="button" class="btn">Check</button>
               </div>
@@ -343,21 +276,26 @@
           </div>
 
           <div class="col-lg-4">
-            <div class="wrapper bg-1">
+            <div class="wrapper bg-3">
               <div class="profile">
                 <img src="" class="thumbnail" alt="">
                 <div class="check">
-                  <i class="fa fa-check"></i>
+                  <i class="fa fa-minus"></i>
                 </div>
-                <h3 class="name">Kali</h3>
-                <p class="title">Hello</p>
+                <h3 class="name">Kurang</h3>
+                <!-- <p class="title">Hello</p> -->
                 <p class="description">
-                  Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting.
+                  <input type="number" id="min1" name="min1" class="form-control col-lg-3" style="margin-right: 100px;">
+                  <input type="number" id="min2" name="min2" class="form-control col-lg-3">
+                </p>
+                <p clss="result">
+                  <input type="number" id="min" name="min" class="form-control col-lg-3" readonly>
+                  <input type="text" class="form-control" readonly>
                 </p>
                 <button type="button" class="btn">Check</button>
               </div>
 
-              <div class="social-icons">
+              <!-- <div class="social-icons">
                 <div class="icon">
                   <a href="" class="href">
                     <i class="fa fa-facebook"></i>
@@ -381,7 +319,105 @@
                   <h4>12.7K</h4>
                   <p>Followers</p>
                 </div>
+              </div> -->
+
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="wrapper bg-3">
+              <div class="profile">
+                <img src="" class="thumbnail" alt="">
+                <div class="check">
+                  <i class="fa fa-slash"></i>
+                </div>
+                <h3 class="name">Bagi</h3>
+                <!-- <p class="title">Hello</p> -->
+                <p class="description">
+                  <input type="number" id="div1" name="div1" class="form-control col-lg-3" style="margin-right: 100px;">
+                  <input type="number" id="div2" name="div2" class="form-control col-lg-3">
+                </p>
+                <p clss="result">
+                  <input type="number" id="divide" name="divide" class="form-control col-lg-3" readonly>
+                  <input type="text" class="form-control" readonly>
+                </p>
+                <button type="button" class="btn">Check</button>
               </div>
+
+              <!-- <div class="social-icons">
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="wrapper bg-3">
+              <div class="profile">
+                <img src="" class="thumbnail" alt="">
+                <div class="check">
+                  <i class="fa fa-star"></i>
+                </div>
+                <h3 class="name">Kali</h3>
+                <!-- <p class="title">Hello</p> -->
+                <p class="description">
+                  <input type="number" id="mul1" name="mul1" class="form-control col-lg-3" style="margin-right: 100px;">
+                  <input type="number" id="mul2" name="mul2" class="form-control col-lg-3">
+                </p>
+                <p clss="result">
+                  <input type="number" id="multiple" name="multiple" class="form-control col-lg-3" readonly>
+                  <input type="text" class="form-control" readonly>
+                </p>
+                <button type="button" class="btn">Check</button>
+              </div>
+
+              <!-- <div class="social-icons">
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+              </div> -->
 
             </div>
           </div>
@@ -394,5 +430,35 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script>
+    $(function(){
+
+      $('#plus1, #plus2').keyup(function(){
+        var plus1 = parseFloat($('#plus1').val()) || 0;
+        var plus2 = parseFloat($('#plus2').val()) || 0;
+        $('#sum').val(plus1 + plus2);
+      });
+
+      $('#min1, #min2').keyup(function(){
+        var min1 = parseFloat($('#min1').val()) || 0;
+        var min2 = parseFloat($('#min2').val()) || 0;
+        $('#min').val(min1 - min2);
+      });
+
+      $('#div1, #div2').keyup(function(){
+        var div1 = parseFloat($('#div1').val()) || 0;
+        var div2 = parseFloat($('#div2').val()) || 0;
+        $('#divide').val(div1 / div2);
+      });
+
+      $('#mul1, #mul2').keyup(function(){
+        var mul1 = parseFloat($('#mul1').val()) || 0;
+        var mul2 = parseFloat($('#mul2').val()) || 0;
+        $('#multiple').val(mul1 * mul2);
+      });
+
+    });
+  </script>
 
 </html>
