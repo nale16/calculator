@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css" class="href" type="text/css"> -->
+
+    <style>
+
+      .row {
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: nowrap;
+        margin-left: -120px;
+        margin-right: 230px;
+        margin-top: 30px;
+      }
+
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all 0.4s ease-in;
+      }
+
+      body{
+        width: 100%;
+        background-image: url(uk.jpg);
+        background-size: cover;
+        position: relative;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        background-position: center;
+        margin: 0;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        overflow: hidden;
+      }
+
+      .wrapper{
+        width: 320px;
+        height: 558px;
+        background: #0e0e63;
+        transition: background 0.5s ease;
+        border-radius: 10px;
+        padding: 20px 20px 20px 20px;
+      }
+
+      .wrapper .profile{
+        margin-top: 2.2rem;
+        position: relative;
+      }
+
+      .wrapper .profile:aftter{
+        width: 100%;
+        height: 1px;
+        content: '';
+        display: block;
+        margin-top: 1.3rem;
+        background: #e9eff7;
+      }
+
+      .wrapper .profile .check{
+        position: absolute;
+        right: 5em;
+        bottom: 15.7em;
+      }
+
+      .wrapper .profile .check i{
+        color: white;
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 100%;
+        background: linear-gradient(to bottom right, #c90a7d, #ff48a0);
+      }
+
+      .wrapper .profile .thumbnail{
+        width: 124px;
+        height: 124px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.5em;
+        border-radius: 100%;
+        border: 3px solid white;
+        padding: 7px;
+      }
+
+      .wrapper .profile .name{
+        color: #2d354a;
+        font-size: 24px;
+        font-weight: 400;
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      .wrapper .profile .title{
+        color: #7c8097;
+        font-size: .75em;
+        font-weight: 300;
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding-top: 0.5em;
+        padding-bottom: 0.7em;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .wrapper .profile .description{
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin-bottom: 1.3em;
+      }
+
+      .wrapper .profile .btn{
+        color: white;
+        width: 130px;
+        height: 42px;
+        outline: none;
+        border: none;
+        display: block;
+        cursor: pointer;
+        font-weight: 300;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 70px;
+        border: 2px solid white;
+      }
+
+      .wrapper .social-icons{
+        display: flex;
+        margin-top: 1.2em;
+        justify-content: space-between;
+      }
+      
+      .wrapper .social-icons .icon{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .wrapper .social-icons .icon a{
+        color: white;
+        width: 59px;
+        height: 59px;
+        font-size: 28px;
+        line-height: 59px;
+        text-align: center;
+        border-radius: 30px;
+      }
+
+      .wrapper .social-icons .icon:nth-of-type(1) a{
+        background: linear-gradient(to bottom right, rgba(37, 45, 117, 0.94), #ff48a0);
+      }
+
+      .wrapper .social-icons .icon:nth-of-type(2) a{
+        background: linear-gradient(to bottom right, rgba(255, 72, 160, 0.87), #ff48a0);
+      }
+
+      .wrapper .social-icons .icon:nth-of-type(3) a{
+        background: linear-gradient(to bottom right, rgba(41, 186, 175, 0.87), #ff48a0);
+      }
+
+      .wrapper .social-icons .icon h4{
+        color: white;
+        font-size: 1em;
+        margin-top: 1.3em;
+        margin-bottom: .2em;
+      }
+
+      .wrapper .social-icons .icon p{
+        color: white;
+        font-size: 12px;
+      }
+
+      .bg-1:hover{
+        background: #2184cf;
+      }
+
+      .bg-2:hover{
+        background: #7265eb;
+      }
+
+      .bg-3:hover{
+        background: #2d21d6;
+      }
+
+      h3, p, .title:hover{
+        color: white !important;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+    
+    <section class="campaign-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="wrapper bg-1">
+              <div class="profile">
+                <img src="" class="thumbnail" alt="">
+                <div class="check">
+                  <i class="fa fa-check"></i>
+                </div>
+                <h3 class="name">Tambah</h3>
+                <p class="title">Hello</p>
+                <p class="description">
+                  Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting.
+                </p>
+                <button type="button" class="btn">Check</button>
+              </div>
+
+              <div class="social-icons">
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="wrapper bg-2">
+              <div class="profile">
+                <img src="" class="thumbnail" alt="">
+                <div class="check">
+                  <i class="fa fa-check"></i>
+                </div>
+                <h3 class="name">Kurang</h3>
+                <p class="title">Hello</p>
+                <p class="description">
+                  Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting.
+                </p>
+                <button type="button" class="btn">Check</button>
+              </div>
+
+              <div class="social-icons">
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="wrapper bg-3">
+              <div class="profile">
+                <img src="" class="thumbnail" alt="">
+                <div class="check">
+                  <i class="fas fa-divide"></i>
+                </div>
+                <h3 class="name">Bagi</h3>
+                <!-- <p class="title">Hello</p> -->
+                <p class="description">
+                  <input type="text" class="form-control">
+                  <input type="text" class="form-control">
+                  <input type="text" class="form-control">
+                  <input type="text" class="form-control">
+                </p>
+                <button type="button" class="btn">Check</button>
+              </div>
+
+              <!-- <div class="social-icons">
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="wrapper bg-1">
+              <div class="profile">
+                <img src="" class="thumbnail" alt="">
+                <div class="check">
+                  <i class="fa fa-check"></i>
+                </div>
+                <h3 class="name">Kali</h3>
+                <p class="title">Hello</p>
+                <p class="description">
+                  Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting.
+                </p>
+                <button type="button" class="btn">Check</button>
+              </div>
+
+              <div class="social-icons">
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+
+                <div class="icon">
+                  <a href="" class="href">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <h4>12.7K</h4>
+                  <p>Followers</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</html>
