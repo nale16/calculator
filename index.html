@@ -55,7 +55,7 @@
       .wrapper{
         width: 320px;
         height: 558px;
-        background: #0e0e63;
+        background: #521525;
         transition: background 0.5s ease;
         border-radius: 10px;
         padding: 20px 20px 20px 20px;
@@ -78,7 +78,7 @@
       .wrapper .profile .check{
         position: absolute;
         right: 5em;
-        bottom: 16.2em;
+        bottom: 19.9em;
       }
 
       .wrapper .profile .check i{
@@ -206,11 +206,15 @@
       }
 
       .bg-2:hover{
-        background: #7265eb;
+        background: #9e21cf;
       }
 
       .bg-3:hover{
-        background: #2d21d6;
+        background: #d67821;
+      }
+
+      .bg-4:hover{
+        background: #088096;
       }
 
       h3, p, .title:hover{
@@ -227,9 +231,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
-            <div class="wrapper bg-3">
+            <div class="wrapper bg-1">
               <div class="profile">
-                <img src="" class="thumbnail" alt="">
+                <img src="visit_1.jpg" class="thumbnail" alt="">
                 <div class="check">
                   <i class="fa fa-plus"></i>
                 </div>
@@ -241,45 +245,20 @@
                 </p>
                 <button type="button" onclick="penjumlahan()" class="btn">Check</button> <br>
                 <p class="result">
-                  <input type="number" id="sum" name="sum" class="form-control col-lg-4" placeholder="Hasil" style="text-align: center;" readonly>
-                  <!-- <input type="text" id="text_sum" class="form-control" style="text-align: center;" readonly> -->
+                  <input type="number" id="sum" name="sum" class="form-control col-lg-4" placeholder="Hasil" style="margin-left: auto; margin-right: auto; text-align: center;" readonly>
+                  <br>
+                  <input type="text" id="teks_sum" name="teks_sum" class="form-control" placeholder="Konversi ke Teks" style="margin-left: auto; margin-right: auto; text-align: center;" readonly>
                 </p>
-                <p id="teks_sum"></p>
+                <!-- <p id="teks_sum"></p> -->
               </div>
-
-              <!-- <div class="social-icons">
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-instagram"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-              </div> -->
 
             </div>
           </div>
 
           <div class="col-lg-4">
-            <div class="wrapper bg-3">
+            <div class="wrapper bg-2">
               <div class="profile">
-                <img src="" class="thumbnail" alt="">
+                <img src="visit_2.jpg" class="thumbnail" alt="">
                 <div class="check">
                   <i class="fa fa-minus"></i>
                 </div>
@@ -289,39 +268,14 @@
                   <input type="number" id="min1" name="min1" class="form-control col-lg-4" style="margin-right: 100px; text-align: center;">
                   <input type="number" id="min2" name="min2" class="form-control col-lg-4" style="text-align: center;">
                 </p>
-                <button type="button" onclick="pengurangan()" class="btn">Check</button> <br>
+                <button type="button" onclick="pengurangan()" class="btn">Check</button>  <br>
                 <p class="result">
-                  <input type="number" id="min" name="min" class="form-control col-lg-4" placeholder="Hasil" style="text-align: center;" readonly>
-                  <!-- <input type="text" class="form-control" style="text-align: center;" readonly> -->
+                  <input type="number" id="min" name="min" class="form-control col-lg-4" placeholder="Hasil" style="margin-left: auto; margin-right: auto; text-align: center;" readonly>
+                  <br>
+                  <input type="text" id="teks_min" name="teks_min" class="form-control" placeholder="Konversi ke Teks" style="margin-left: auto; margin-right: auto; text-align: center;" readonly>
                 </p>
-                <p id="teks_min"></p>
+                <!-- <p id="teks_min"></p> -->
               </div>
-
-              <!-- <div class="social-icons">
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-instagram"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-              </div> -->
 
             </div>
           </div>
@@ -329,7 +283,7 @@
           <div class="col-lg-4">
             <div class="wrapper bg-3">
               <div class="profile">
-                <img src="" class="thumbnail" alt="">
+                <img src="visit_3.jpg" class="thumbnail" alt="">
                 <div class="check">
                   <i class="fa fa-divide"></i>
                 </div>
@@ -339,47 +293,22 @@
                   <input type="number" id="div1" name="div1" class="form-control col-lg-4" style="margin-right: 100px; text-align: center;">
                   <input type="number" id="div2" name="div2" class="form-control col-lg-4" style="text-align: center;">
                 </p>
-                <button type="button" onclick="pembagian()" class="btn">Check</button> <br>
+                <button type="button" onclick="pembagian()" class="btn">Check</button>  <br>
                 <p class="result">
-                  <input type="number" id="divide" name="divide" class="form-control col-lg-4" placeholder="Hasil" style="text-align: center;" readonly>
-                  <!-- <input type="text" class="form-control" style="text-align: center;" readonly> -->
+                  <input type="number" id="divide" name="divide" class="form-control col-lg-4" placeholder="Hasil" style="margin-left: auto; margin-right: auto; text-align: center;" readonly>
+                  <br>
+                  <input type="text" id="teks_div" name="teks_div" class="form-control" placeholder="Konversi ke Teks" style="margin-left: auto; margin-right: auto; text-align: center;" readonly>
                 </p>
-                <p id="teks_div"></p>
+                <!-- <p id="teks_div"></p> -->
               </div>
-
-              <!-- <div class="social-icons">
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-instagram"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-              </div> -->
 
             </div>
           </div>
 
           <div class="col-lg-4">
-            <div class="wrapper bg-3">
+            <div class="wrapper bg-4">
               <div class="profile">
-                <img src="" class="thumbnail" alt="">
+                <img src="visit_4.jpg" class="thumbnail" alt="">
                 <div class="check">
                   <i class="fa fa-star"></i>
                 </div>
@@ -389,40 +318,15 @@
                   <input type="number" id="mul1" name="mul1" class="form-control col-lg-4" style="margin-right: 100px; text-align: center;">
                   <input type="number" id="mul2" name="mul2" class="form-control col-lg-4" style="text-align: center;">
                 </p>
-                <button type="button" class="btn" onclick="perkalian()">Check</button> <br>
+                <button type="button" class="btn" onclick="perkalian()">Check</button>  <br>
                 <p class="result">
-                  <input type="number" id="multiple" name="multiple" class="form-control col-lg-4" placeholder="Hasil" style="text-align: center;" readonly>
-                  <!-- <input type="text" class="form-control" style="text-align: center;" readonly> -->
+                  <input type="number" id="multiple" name="multiple" class="form-control col-lg-4" placeholder="Hasil" style="text-align: center; margin-left: auto; margin-right: auto;" readonly>
+                  <br>
+                  <input type="text" id="teks_mul" name="teks_mul" class="form-control" placeholder="Konversi ke Teks" style="margin-left: auto; margin-right: auto; text-align: center;" readonly>
                 </p>
-                <p id="teks_multiple"></p>
+                <!-- <p id="teks_multiple"></p> -->
                 
               </div>
-
-              <!-- <div class="social-icons">
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-instagram"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-
-                <div class="icon">
-                  <a href="" class="href">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <h4>12.7K</h4>
-                  <p>Followers</p>
-                </div>
-              </div> -->
 
             </div>
           </div>
@@ -478,17 +382,23 @@
     if (mul == "0") {
       document.getElementById('multiple').style.color = "white";
       document.getElementById('multiple').style.background="blue";
+      document.getElementById('teks_mul').style.color = "white";
+        document.getElementById('teks_mul').style.background="blue";
     }
     else if  (modulus == "0") {
       document.getElementById('multiple').style.color = "white";
       document.getElementById('multiple').style.background="green";
+      document.getElementById('teks_mul').style.color = "white";
+        document.getElementById('teks_mul').style.background="green";
     } 
     else if (modulus == "1") {
         document.getElementById('multiple').style.color = "black";
         document.getElementById('multiple').style.background="yellow";
+        document.getElementById('teks_mul').style.color = "black";
+        document.getElementById('teks_mul').style.background="yellow";
       }
       
-    document.getElementById("teks_multiple").innerHTML = " Konversi ke Teks : " +  get_teks_angka(document.getElementById("multiple").value, 0);
+    document.getElementById("teks_mul").value = get_teks_angka(document.getElementById("multiple").value, 0);
 
     }
     document.getElementById('multiple').onchange = perkalian;
@@ -505,17 +415,23 @@
       if (sum == "0") {
         document.getElementById('sum').style.color = "white";
         document.getElementById('sum').style.background="blue";
+        document.getElementById('teks_sum').style.color = "white";
+        document.getElementById('teks_sum').style.background="blue";
       }
       else if  (modulus == "0") {
         document.getElementById('sum').style.color = "white";
         document.getElementById('sum').style.background="green";
+        document.getElementById('teks_sum').style.color = "white";
+        document.getElementById('teks_sum').style.background="green";
       } 
       else if (modulus == "1") {
         document.getElementById('sum').style.color = "black";
         document.getElementById('sum').style.background="yellow";
+        document.getElementById('teks_sum').style.color = "black";
+        document.getElementById('teks_sum').style.background="yellow";
       }
       
-      document.getElementById("teks_sum").innerHTML = " Konversi ke Teks : " +  get_teks_angka(document.getElementById("sum").value, 0);
+      document.getElementById("teks_sum").value = get_teks_angka(document.getElementById("sum").value, 0);
     }
     document.getElementById('sum').onchange= penjumlahan;
     
@@ -532,17 +448,26 @@
       if (minus == "0") {
         document.getElementById('min').style.color = "white";
         document.getElementById('min').style.background="blue";
+        document.getElementById('teks_min').style.color = "white";
+        document.getElementById('teks_min').style.background="blue";
+      }
+      else if (minus < "0") {
+        alert('hasil minus');
       }
       else if  (modulus == "0") {
         document.getElementById('min').style.color = "white";
         document.getElementById('min').style.background="green";
+        document.getElementById('teks_min').style.color = "white";
+        document.getElementById('teks_min').style.background="green";
       } 
       else if (modulus == "1") {
         document.getElementById('min').style.color = "black";
         document.getElementById('min').style.background="yellow";
+        document.getElementById('teks_min').style.color = "black";
+        document.getElementById('teks_min').style.background="yellow";
       }
     
-    document.getElementById("teks_min").innerHTML = " Konversi ke Teks : " +  get_teks_angka(document.getElementById("min").value, 0);
+    document.getElementById("teks_min").value =  get_teks_angka(document.getElementById("min").value, 0);
       
     }
     document.getElementById('min').onchange = pengurangan;
@@ -559,17 +484,23 @@
       if (divide == "0") {
         document.getElementById('divide').style.color = "white";
         document.getElementById('divide').style.background="blue";
+        document.getElementById('teks_div').style.color = "white";
+        document.getElementById('teks_div').style.background="blue";
       }
       else if  (modulus == "0") {
         document.getElementById('divide').style.color = "white";
         document.getElementById('divide').style.background="green";
+        document.getElementById('teks_div').style.color = "white";
+        document.getElementById('teks_div').style.background="green";
       } 
       else if (modulus == "1") {
         document.getElementById('divide').style.color = "black";
         document.getElementById('divide').style.background="yellow";
+        document.getElementById('teks_div').style.color = "black";
+        document.getElementById('teks_div').style.background="yellow";
       }
     
-    document.getElementById("teks_div").innerHTML = " Konversi ke Teks : " +  get_teks_angka(document.getElementById("divide").value, 0);
+    document.getElementById("teks_div").value =  get_teks_angka(document.getElementById("divide").value, 0);
       
     }
     document.getElementById('divide').onchange = pembagian;
@@ -579,6 +510,7 @@
       var ones = [];
       var tens = [];
       var ten_plus = [];
+      ones["0"] = "nol";
       ones["1"] = "satu";
       ones["2"] = "dua";
       ones["3"] = "tiga";
@@ -629,7 +561,7 @@
 
     function get_teks_angka(str, recursive_call_count) {
     if(recursive_call_count > 1) {
-        return "conversion is not feasible";
+        return "angka > 0";
       }
     var len = str.length;
     var ten_plus = konversi_ke_teks(str, false);
@@ -648,20 +580,20 @@
               }
           }
       
-      var hundred = konversi_ke_teks(str.slice(0, len-2), true);
-    words = hundred != undefined ? hundred + " hundred " + words : words;
+      var  seratus = konversi_ke_teks(str.slice(0, len-2), true);
+    words =  seratus != undefined ?  seratus + " seratus " + words : words;
       if(len == 3) {
         return words;
       }
       
-      var thousand = konversi_ke_teks(str.slice(0, len-3), false);
-    words = thousand != undefined ? thousand  + " thousand " + words : words;
+      var ribu = konversi_ke_teks(str.slice(0, len-3), false);
+    words = ribu != undefined ? ribu  + " ribu " + words : words;
       if(len <= 5) {
         return words;
       }
       
-      var lakh = konversi_ke_teks(str.slice(0, len-5), false);
-      words =  lakh != undefined ? lakh + " lakh " + words : words;
+      var juta = konversi_ke_teks(str.slice(0, len-5), false);
+      words =  juta != undefined ? juta + " juta " + words : words;
       if(len <= 7) {
         return words;
       }
